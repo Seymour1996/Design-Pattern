@@ -1,2 +1,2 @@
-# Desigon-Pattern
+# Design-Pattern
 该项目包含了本人学习设计模式过程中的例子源代码以及相应的实验报告
