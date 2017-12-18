@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:text-align="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>计算价格</title>
+	<script src="//cdn.bootcss.com/angular.js/1.5.6/angular.min.js"></script>
+	<script type="text/javascript" src="js/printer.js"></script>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</link>
+</head>
+
+<body ng-app="app" ng-controller="MainController" >
+	<h1>打印机</h1>
+<form>
+	<h3>
+        <div class="form-group">
+            <text>打印机型号:</text>
+				<select ng-model="name" style="width:200px;"> 
+					<option value="001" >惠普 原价:500</option> 
+					<option value="002">佳能 原价:1000</option>
+					<option value="003">兄弟 原价:1500</option>
+				</select> 
+        </div>
+
+        <div class="form-group">
+            <text>打折方式:&#12288;</text>
+			<select ng-model="strategy" style="width:200px;" > 
+			    <option value="pattern.strategy.NoDiscount">不打折</option> 
+			    <option value="pattern.strategy.MultiplyDiscount" >打折扣</option>
+				<option value="pattern.strategy.SubtractDiscount">立减</option>
+			</select> 
+        </div>
+        <div class="form-group">
+            <text>打折力度:&#12288;</text>
+			<input ng-model="discount" style="width:200px;"/>
+        </div>
+
+        <button ng-click="calculatePrice()">计算价格</button>
+    </h3>
+	</form>
+    <h2><font color="red" ng-show="message">{{message}}</font>
+    </h2>
+</body>
+</html>
